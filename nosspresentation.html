@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOSS SRMS - Service Request Management System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="nosssrms.css" />
+  </head>
+  <body>
+    <nav class="presentation-nav">
+      <div class="nav-brand">
+        <i class="fas fa-headset"></i> NOSS Service Request Management System
+      </div>
+      <div class="nav-links" id="navLinks"></div>
+    </nav>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="slides-container" id="slidesContainer">
+      <!-- SLIDE 1: TITLE -->
+      <div class="slide active" data-slide="0">
+        <div class="feature-card title-slide">
+          <i
+            class="fas fa-headset"
+            style="font-size: 4rem; color: var(--primary); margin-bottom: 20px"
+          ></i>
+          <h1
+            style="
+              font-size: 5rem;
+              color: var(--primary-dark);
+              font-weight: 1000;
+            "
+          >
+            NOSS SRMS
+          </h1>
+          <p
+            style="
+              font-size: 1.3rem;
+              color: var(--text-secondary);
+              margin: 15px 0;
+            "
+          >
+            Service Request Management System <br />
+            <code>https://nossncdsrms.infinityfreeapp.com/</code>
+          </p>
+          <div
+            style="
+              width: 80px;
+              height: 3px;
+              background: var(--primary);
+              margin: 20px auto;
+            "
+          ></div>
+          <br />
+          <p style="font-size: small">
+            Developed by <strong>Pablito Jr. Yambing</strong> | Guided by
+            <strong>Mr. Mark Bordeos</strong> | Supervised by
+            <strong>Mr. Michael Mudlong</strong>
+          </p>
+          <div class="button-group" style="margin-top: 40px">
+            <button class="slide-nav-btn" onclick="nextSlide()">
+              Start Presentation →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: INTRODUCTION & BACKGROUND -->
+      <div class="slide" data-slide="1">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-info-circle"></i>
+            <h2>System Overview: Why SRMS?</h2>
+            <span class="badge">Introduction</span>
+          </div>
+          <div class="purpose-card">
+            <h3><i class="fas fa-bullseye"></i> Purpose of the System</h3>
+            <p>
+              The Service Request Management System (SRMS) is designed to
+              centralize, track, and manage IT service requests efficiently —
+              from ticket creation to resolution — ensuring timely support and
+              data-driven decision making.
+            </p>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-cogs"></i> Key Functions</h3>
+              <div class="function-list">
+                <div class="function-item">
+                  <i class="fas fa-ticket-alt"></i> Ticket Management
+                </div>
+                <div class="function-item">
+                  <i class="fas fa-chart-line"></i> Performance Analytics
+                </div>
+                <div class="function-item">
+                  <i class="fas fa-filter"></i> Advanced Filtering
+                </div>
+                <div class="function-item">
+                  <i class="fas fa-undo-alt"></i> Restore Deleted Tickets
+                </div>
+                <div class="function-item">
+                  <i class="fas fa-file-export"></i> Excel/PDF Reports
+                </div>
+                <div class="function-item">
+                  <i class="fas fa-shield-alt"></i> Secure Archival
+                </div>
+              </div>
+            </div>
+            <div class="instructions">
+              <h3><i class="fas fa-exchange-alt"></i> Old Process vs SRMS</h3>
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th style="width: 50%">❌ Old Process (Excel)</th>
+                    <th style="width: 50%">✅ SRMS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Manual data entry in spreadsheets</td>
+                    <td class="check-good">Web-based centralized database</td>
+                  </tr>
+                  <tr>
+                    <td>Difficult to track ticket status</td>
+                    <td class="check-good">
+                      Real-time status tracking with color badges
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>No audit trail of changes</td>
+                    <td class="check-good">
+                      Complete modification history logs
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hard to filter and analyze data</td>
+                    <td class="check-good">
+                      Advanced multi-filter & search capabilities
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>No performance metrics or insights</td>
+                    <td class="check-good">
+                      Live charts, support analytics, key insights
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Deleting loses data permanently</td>
+                    <td class="check-good">Soft delete with restore option</td>
+                  </tr>
+                  <tr>
+                    <td>Manual report generation</td>
+                    <td class="check-good">One-click Excel/PDF export</td>
+                  </tr>
+                  <tr>
+                    <td>No session security</td>
+                    <td class="check-good">
+                      Secure login with session timeout
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tip-box" style="margin-top: 20px; text-align: center">
+            <i class="fas fa-chart-line"></i> <strong>Impact:</strong> Reduced
+            manual effort, improved response times, and data-driven decision
+            making!
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: AGENDA -->
+      <div class="slide" data-slide="2">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-list-ul"></i>
+            <h2>Presentation Agenda</h2>
+          </div>
+          <div class="steps-grid">
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <strong>Login Demo</strong><br />Accessing the system
+            </div>
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <strong>Dashboard Tour</strong><br />Overview & stats
+            </div>
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <strong>Create Ticket</strong><br />New service request
+            </div>
+            <div class="step-item">
+              <div class="step-number">4</div>
+              <strong>Filters & Search</strong><br />Find tickets fast
+            </div>
+            <div class="step-item">
+              <div class="step-number">5</div>
+              <strong>Update & Delete</strong><br />Manage tickets
+            </div>
+            <div class="step-item">
+              <div class="step-number">6</div>
+              <strong>Archive & Restore</strong><br />Soft delete system
+            </div>
+            <div class="step-item">
+              <div class="step-number">7</div>
+              <strong>Analytics</strong><br />Performance metrics
+            </div>
+            <div class="step-item">
+              <div class="step-number">8</div>
+              <strong>Export Reports</strong><br />Excel/PDF export
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: LOGIN DEMO (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="3">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-sign-in-alt"></i>
+            <h2>Login to the System</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-info-circle"></i> How to Login</h3>
+              <ol>
+                <li>Navigate to <code>pages/login.php</code></li>
+                <li>Enter username: <strong>nossAdmin</strong></li>
+                <li>Enter password: <strong>noss@admin</strong></li>
+                <li>Click <strong>Login</strong> button</li>
+              </ol>
+              <div class="tip-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Pro Tip:</strong> Use the password toggle (eye icon) to
+                verify your password before submitting.
+              </div>
+              <h3 style="margin-top: 20px">Session Features</h3>
+              <ul>
+                <li>⏱️ 1 hour inactivity timeout</li>
+                <li>⚠️ Warning modal appears 1 minute before logout</li>
+                <li>🔄 "Stay Logged In" refreshes session</li>
+              </ul>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  autoplay
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="login.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: DASHBOARD OVERVIEW (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="4">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-tachometer-alt"></i>
+            <h2>Dashboard Overview</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-chart-simple"></i> Dashboard Components</h3>
+              <ul>
+                <li>
+                  <strong>Welcome Card</strong> - Personalized greeting with
+                  user name
+                </li>
+                <li>
+                  <strong>Total Tickets Card</strong> - Overall count with
+                  gradient background
+                </li>
+                <li>
+                  <strong>Ticket Status Section</strong> - Pending, Closed,
+                  Breached with color-coded cards
+                </li>
+                <li>
+                  <strong>Current Action Section</strong> - Open, Assigned,
+                  Resolved, Waiting for Customer, Waiting for 3rd Party
+                </li>
+                <li>
+                  <strong>Data Table</strong> - Complete ticket list with
+                  sorting and pagination
+                </li>
+              </ul>
+              <div class="tip-box">
+                <i class="fas fa-mouse-pointer"></i>
+                <strong>Interactive:</strong> Click any stat card to filter the
+                table instantly!
+              </div>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="dashboard.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: CREATE TICKET (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="5">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-plus-circle"></i>
+            <h2>Creating a New Ticket</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-list"></i> Step-by-Step</h3>
+              <ol>
+                <li>Click <strong>"NEW TICKET"</strong> button</li>
+                <li>
+                  Enter <strong>Service Request No.</strong> (6 digits exactly)
+                </li>
+                <li>
+                  Enter <strong>Requested By</strong> (letters and spaces only)
+                </li>
+                <li>
+                  Select <strong>Branch/Department</strong> from auto-suggest
+                  datalist
+                </li>
+                <li>
+                  Select <strong>Assigned Support</strong> (multiple checkboxes)
+                </li>
+                <li>
+                  Select <strong>Problem Type</strong> (multiple checkboxes)
+                </li>
+                <li>
+                  Set
+                  <strong>Ticket Status & Current Action</strong> (auto-linked)
+                </li>
+                <li>
+                  Enter
+                  <strong>Time Started / Time Completed</strong>
+                  (auto-calculates Time Difference)
+                </li>
+                <li>
+                  Enter <strong>No. of Endpoints</strong> (auto-calculates Time
+                  Per Endpoint)
+                </li>
+                <li>Click <strong>SAVE TICKET</strong></li>
+              </ol>
+              <div class="tip-box">
+                <i class="fas fa-calculator"></i>
+                <strong>Auto-Calculation:</strong> Time Difference (hh:mm:ss)
+                and Time Per Endpoint are calculated automatically!
+              </div>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="create.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 7: FILTERS & SEARCH (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="6">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-filter"></i>
+            <h2>Advanced Filtering & Search</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-sliders-h"></i> Filter Options</h3>
+              <ul>
+                <li>
+                  <strong>Support Personnel Filter</strong> - Filter by multiple
+                  support members (Ctrl+Click for multi-select)
+                </li>
+                <li>
+                  <strong>Problem Type Filter</strong> - Filter by multiple
+                  issue types (Ctrl+Click for multi-select)
+                </li>
+                <li>
+                  <strong>Status Cards</strong> - Click Pending/Closed/Breached
+                  cards to filter by status
+                </li>
+                <li>
+                  <strong>Action Cards</strong> - Click
+                  Open/Assigned/Resolved/Waiting cards to filter by action
+                </li>
+                <li>
+                  <strong>Search Bar</strong> - Search by ITSM number (6-digit)
+                </li>
+                <li>
+                  <strong>Clear All Filters</strong> - Reset all active filters
+                </li>
+              </ul>
+              <div class="tip-box">
+                <i class="fas fa-tags"></i>
+                <strong>Filter Tags:</strong> Active filters appear as removable
+                tags above the table!
+              </div>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="filter.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 8: UPDATE & DELETE (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="7">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-edit"></i>
+            <h2>Updating & Deleting Tickets</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-pen"></i> Update Ticket</h3>
+              <ol>
+                <li>
+                  Click the <strong>Edit (pencil)</strong> icon in Actions
+                  column
+                </li>
+                <li>Modify any field in the Update Modal</li>
+                <li>
+                  System automatically preserves
+                  <strong>modification history</strong> in History Logs
+                </li>
+                <li>Click <strong>UPDATE RECORD</strong> to save changes</li>
+              </ol>
+              <h3 style="margin-top: 20px">
+                <i class="fas fa-trash"></i> Delete Ticket
+              </h3>
+              <ol>
+                <li>Click the <strong>Trash</strong> icon in Actions column</li>
+                <li>Enter optional deletion reason in the prompt</li>
+                <li>
+                  Ticket moves to <strong>Archived Tickets</strong> (soft
+                  delete)
+                </li>
+                <li>
+                  ⚠️ Ticket is NOT permanently deleted - can be restored later!
+                </li>
+              </ol>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="update.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 9: DETAILED ENDPOINTS (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="8">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-desktop"></i>
+            <h2>Detailed Endpoints (Closing Tickets)</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-chart-line"></i> When Closing a Ticket</h3>
+              <p>System requires detailed endpoint breakdown:</p>
+              <ul>
+                <li>
+                  <i class="fas fa-laptop"></i>
+                  <strong>Desktop PC/Laptop</strong>
+                </li>
+                <li><i class="fas fa-phone"></i> <strong>IP Phone</strong></li>
+                <li><i class="fas fa-wifi"></i> <strong>VoIP</strong></li>
+                <li>
+                  <i class="fas fa-phone-alt"></i> <strong>Direct Lines</strong>
+                </li>
+                <li><i class="fas fa-print"></i> <strong>Printers</strong></li>
+                <li>
+                  <i class="fas fa-shield-alt"></i>
+                  <strong>FortiClient Account</strong>
+                </li>
+              </ul>
+              <div class="tip-box">
+                <i class="fas fa-calculator"></i>
+                <strong>Auto-calculations:</strong> Total Endpoints, Time Per
+                Endpoint and Time Difference are calculated automatically!
+              </div>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="endpoints.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 10: ARCHIVED TICKETS (RESTORE) (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="9">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-archive"></i>
+            <h2>Archived Tickets (Restore)</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3>
+                <i class="fas fa-undo-alt"></i> How to Restore a Deleted Ticket
+              </h3>
+              <ol>
+                <li>
+                  Click <strong>"Archived Tickets"</strong> in the navigation
+                  bar
+                </li>
+                <li>
+                  Click <strong>REFRESH PAGE</strong> to load deleted records
+                </li>
+                <li>Search by ITSM number if needed</li>
+                <li>
+                  Click the <strong>Restore (undo)</strong> icon in the Actions
+                  column
+                </li>
+                <li>Confirm restoration in the modal dialog</li>
+                <li>
+                  Ticket appears back in active tickets with restoration record
+                  in history!
+                </li>
+              </ol>
+              <div class="tip-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Warning:</strong> Permanent delete removes forever - use
+                with caution! Regular delete is safe (soft delete).
+              </div>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="archive.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 11: PERFORMANCE METRICS (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="10">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-chart-line"></i>
+            <h2>Performance Metrics & Analytics</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-chart-pie"></i> Dashboard Components</h3>
+              <ul>
+                <li>
+                  <strong>Status Pie Chart</strong> - Pending (Yellow), Closed
+                  (Green), Breached (Red)
+                </li>
+                <li>
+                  <strong>Action Pie Chart</strong> - Open, Assigned, Resolved,
+                  Waiting for CF, Waiting for 3rd Party
+                </li>
+                <li>
+                  <strong>Branch Bar Chart</strong> - Top 10 busiest
+                  branches/departments
+                </li>
+                <li>
+                  <strong>Support Table</strong> - Performance metrics per
+                  support member
+                  <small>(Click ticket count to see details!)</small>
+                </li>
+                <li>
+                  <strong>Issues Table</strong> - Most common problem types
+                  ranked
+                  <small
+                    >(Click count to see all tickets with that issue!)</small
+                  >
+                </li>
+                <li>
+                  <strong>Key Insights Box</strong> - Automated analytics
+                  summary
+                </li>
+                <li>
+                  <strong>Date Range Filter</strong> - Filter by assigned date
+                  range
+                </li>
+              </ul>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="analytics.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 12: EXPORT REPORTS (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="11">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-file-export"></i>
+            <h2>Export Reports (Excel/PDF)</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3>
+                <i class="fas fa-file-excel" style="color: #1e7e34"></i> Excel
+                Export
+              </h3>
+              <ul>
+                <li>
+                  Click <strong>"EXPORT EXCEL"</strong> button on main dashboard
+                </li>
+                <li>
+                  Exports currently filtered data (respects active filters)
+                </li>
+                <li>Includes all table columns</li>
+                <li>Auto-generates filename with timestamp</li>
+              </ul>
+              <h3 style="margin-top: 20px">
+                <i class="fas fa-file-pdf" style="color: #dc3545"></i> PDF
+                Export
+              </h3>
+              <ul>
+                <li>Available on main dashboard AND Statistics page</li>
+                <li>
+                  Professional report format with header, title, and footer
+                </li>
+                <li>Landscape orientation for better table display</li>
+                <li>Statistics page PDF captures all charts and tables</li>
+              </ul>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="export.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 13: DATE RANGE FILTERING (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="12">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-calendar-alt"></i>
+            <h2>Date Range Filtering</h2>
+            <span class="badge badge-pending">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-sliders-h"></i> How to Use</h3>
+              <ol>
+                <li>Go to <strong>Performance Metrics</strong> page</li>
+                <li>
+                  Select <strong>"Assigned Date From"</strong> (start date)
+                </li>
+                <li>Select <strong>"Assigned Date To"</strong> (end date)</li>
+                <li>Click <strong>"Apply"</strong> button</li>
+              </ol>
+              <div class="tip-box">
+                <i class="fas fa-sync-alt"></i>
+                <strong>Real-time Updates:</strong> All charts, tables, and
+                insights update instantly!
+              </div>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="date_range.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 14: SUPPORT ANALYTICS (VIDEO EMBEDDED) -->
+      <div class="slide" data-slide="13">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-chart-simple"></i>
+            <h2>Support Analytics (Click on Support Name)</h2>
+            <span class="badge badge-assigned">Demo</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3><i class="fas fa-mouse-pointer"></i> How to Access</h3>
+              <ol>
+                <li>
+                  On main dashboard, find the <strong>SUPPORT</strong> column
+                </li>
+                <li>
+                  Click on any <strong>support member name</strong> (e.g.,
+                  "ALLAN", "MIKE")
+                </li>
+                <li>A modal opens with detailed analytics</li>
+              </ol>
+              <ul>
+                <li>📊 Total tickets assigned</li>
+                <li>✅ Closed tickets count</li>
+                <li>📈 Completion rate percentage</li>
+                <li>⏰ Total time per endpoint</li>
+                <li>⚡ Average time per endpoint</li>
+                <li>📋 Detailed ticket list</li>
+              </ul>
+            </div>
+            <div class="media-container">
+              <div class="media-header">
+                <span><i class="fas fa-play-circle"></i> Demo Video</span>
+                <span>▶️ Click play to watch</span>
+              </div>
+              <div class="media-content">
+                <video
+                  width="100%"
+                  height="auto"
+                  controls
+                  muted
+                  loop
+                  style="max-height: 400px; border-radius: 12px"
+                >
+                  <source src="support_analytics.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 15: TROUBLESHOOTING GUIDE -->
+      <div class="slide" data-slide="14">
+        <div class="feature-card">
+          <div class="feature-header">
+            <i class="fas fa-bug"></i>
+            <h2>Troubleshooting Guide</h2>
+            <span class="badge badge-breached">Help</span>
+          </div>
+          <div class="two-columns">
+            <div class="instructions">
+              <h3>
+                <i class="fas fa-exclamation-circle"></i> Common Issues &
+                Solutions
+              </h3>
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Issue</th>
+                    <th>Solution</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cannot login</td>
+                    <td>
+                      Check credentials: <code>nossAdmin</code> /
+                      <code>noss@admin</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ITSM number error</td>
+                    <td>Must be exactly 6 digits (e.g., 123456)</td>
+                  </tr>
+                  <tr>
+                    <td>Branch not found</td>
+                    <td>Type to search from dropdown list</td>
+                  </tr>
+                  <tr>
+                    <td>Time not calculating</td>
+                    <td>Enter both Start Time AND End Time</td>
+                  </tr>
+                  <tr>
+                    <td>Session expired</td>
+                    <td>Click "Stay Logged In" when warned</td>
+                  </tr>
+                  <tr>
+                    <td>No data in table</td>
+                    <td>Click "REFRESH PAGE" button</td>
+                  </tr>
+                  <tr>
+                    <td>Deleted ticket missing</td>
+                    <td>Check "Archived Tickets" page</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="instructions">
+              <h3><i class="fas fa-life-ring"></i> Support Contacts</h3>
+              <ul>
+                <li>
+                  <strong>System Administrator:</strong> Pablito Jr. Yambing
+                </li>
+                <li><strong>Technical Guidance:</strong> Mr. Mark Bordeos</li>
+                <li>
+                  <strong>Immediate Supervisor:</strong> Mr. Michael Mudlong
+                </li>
+                <li>
+                  <strong>Email Support:</strong>
+                  <code>ncdnoss.sss@gmail.com</code>
+                </li>
+                <li><strong>Documentation:</strong> Available upon request</li>
+              </ul>
+              <div class="tip-box" style="margin-top: 20px">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Quick Fix:</strong> When in doubt, click "REFRESH PAGE"
+                to reload all data!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 16: SUMMARY & Q&A -->
+      <div class="slide" data-slide="15">
+        <div class="feature-card" style="text-align: center">
+          <div class="feature-header" style="justify-content: center">
+            <i class="fas fa-check-circle" style="color: var(--success)"></i>
+            <h2>Key Benefits Summary</h2>
+          </div>
+          <div
+            class="steps-grid"
+            style="grid-template-columns: repeat(4, 1fr); margin: 25px 0"
+          >
+            <div class="step-item">
+              <i class="fas fa-database"></i><br />Centralized Tracking
+            </div>
+            <div class="step-item">
+              <i class="fas fa-chart-line"></i><br />Performance Analytics
+            </div>
+            <div class="step-item">
+              <i class="fas fa-shield-alt"></i><br />Secure Archival
+            </div>
+            <div class="step-item">
+              <i class="fas fa-file-alt"></i><br />Report Generation
+            </div>
+          </div>
+          <div class="two-columns" style="margin-top: 20px">
+            <div class="instructions" style="text-align: left">
+              <h3><i class="fas fa-road"></i> Future Enhancements & Roadmap</h3>
+              <ul>
+                <li>
+                  <strong>📧 Email Notifications</strong> - Automatic email
+                  alerts for ticket assignment, status changes, and SLA breaches
+                </li>
+                <li>
+                  <strong>👥 Role-Based Access Control</strong> - Admin, Support
+                  Team, Department Head, and Viewer roles with custom
+                  permissions
+                </li>
+                <li>
+                  <strong>⚙️ Configurable SLA Management</strong> - Customizable
+                  SLA thresholds per department or ticket type
+                </li>
+                <li>
+                  <strong>📱 Progressive Web App (PWA)</strong> -
+                  Mobile-friendly version with offline capabilities
+                </li>
+                <li>
+                  <strong>💬 Messaging Integration</strong> - Real-time chat
+                  notifications via Microsoft Teams
+                </li>
+                <li>
+                  <strong>📎 File Attachments</strong> - Upload screenshots,
+                  documents, and error logs to tickets
+                </li>
+                <li>
+                  <strong>🔔 Real-time Dashboard</strong> - Live updates without
+                  page refresh using WebSockets
+                </li>
+                <li>
+                  <strong>📅 Automated Report Scheduling</strong> - Schedule
+                  weekly/monthly reports to be emailed to stakeholders
+                </li>
+              </ul>
+            </div>
+            <div class="instructions" style="text-align: left">
+              <h3>
+                <i class="fas fa-headset"></i> Support & Contact Information
+              </h3>
+              <ul style="margin-bottom: 15px">
+                <li>
+                  <strong>📧 Email Support:</strong>
+                  <code>ncdnoss.sss@gmail.com</code>
+                </li>
+                <li><strong>👨‍💻 Developer:</strong> Pablito Jr. Yambing</li>
+                <li><strong>👨‍🏫 Technical Adviser:</strong> Mr. Mark Bordeos</li>
+                <li>
+                  <strong>👨‍💼 Immediate Supervisor:</strong> Mr. Michael Mudlong
+                </li>
+                <li>
+                  <strong>📚 Documentation:</strong> Complete user manual will
+                  be provided
+                </li>
+              </ul>
+              <div class="tip-box" style="margin-top: 10px; text-align: center">
+                <i class="fas fa-star"></i>
+                <strong>We value your feedback!</strong> Please share your
+                suggestions for system improvement.
+              </div>
+            </div>
+          </div>
+          <div class="button-group">
+            <button class="slide-nav-btn" onclick="window.location.reload()">
+              Restart Presentation
+            </button>
+          </div>
+          <footer style="margin-top: 30px">
+            <p>
+              © 2026 NOSS Service Request Management System - All Rights
+              Reserved
+            </p>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <div class="fixed-nav-buttons">
+      <button
+        class="slide-nav-btn"
+        style="background: #4a5568"
+        onclick="prevSlide()"
+      >
+        <i class="fas fa-chevron-left"></i> Previous
+      </button>
+      <button class="slide-nav-btn" onclick="nextSlide()">
+        Next <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const navLinks = document.getElementById("navLinks");
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      function createNavButtons() {
+        navLinks.innerHTML = "";
+        const titles = [
+          "🏠 Home",
+          "Intro",
+          "Agenda",
+          "Login",
+          "Dashboard",
+          "Create",
+          "Filters",
+          "Update",
+          "Endpoints",
+          "Archive",
+          "Analytics",
+          "Export",
+          "Date Range",
+          "Support Analytics",
+          "Quick Ref",
+          "Summary",
+        ];
+        for (let i = 0; i < totalSlides; i++) {
+          const btn = document.createElement("button");
+          btn.className = "nav-btn";
+          btn.textContent = titles[i] || `Slide ${i + 1}`;
+          if (i === currentSlide) btn.classList.add("active");
+          btn.addEventListener("click", () => goToSlide(i));
+          navLinks.appendChild(btn);
+        }
+      }
+
+      function updateSlides() {
+        slides.forEach((slide, index) => {
+          slide.classList.toggle("active", index === currentSlide);
+        });
+        document.querySelectorAll(".nav-btn").forEach((btn, index) => {
+          btn.classList.toggle("active", index === currentSlide);
+        });
+        const progress = ((currentSlide + 1) / totalSlides) * 100;
+        document.getElementById("progressBar").style.width = `${progress}%`;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function goToSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= totalSlides) index = totalSlides - 1;
+        currentSlide = index;
+        updateSlides();
+      }
+
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+      function prevSlide() {
+        goToSlide(currentSlide - 1);
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+          e.preventDefault();
+          nextSlide();
+        } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+          e.preventDefault();
+          prevSlide();
+        } else if (e.key === "Home") {
+          e.preventDefault();
+          goToSlide(0);
+        } else if (e.key === "End") {
+          e.preventDefault();
+          goToSlide(totalSlides - 1);
+        }
+      });
+
+      createNavButtons();
+      updateSlides();
+
+      window.nextSlide = nextSlide;
+      window.prevSlide = prevSlide;
+      window.goToSlide = goToSlide;
+    </script>
+  </body>
+</html>

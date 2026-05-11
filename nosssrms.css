@@ -39,6 +39,47 @@ body {
   overflow-x: hidden;
 }
 
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1002;
+  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Overlay */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+
+.nav-overlay.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
 /* Navigation - LARGER */
 .presentation-nav {
   position: fixed;
@@ -54,6 +95,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  transition: transform 0.3s ease;
 }
 
 .nav-brand {
@@ -125,10 +167,78 @@ body {
   transform: translateY(-2px);
 }
 
+/* Mobile Responsive Navigation */
+@media (max-width: 992px) {
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .presentation-nav {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    right: auto;
+    width: 280px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    z-index: 1001;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .presentation-nav.mobile-open {
+    left: 0;
+  }
+
+  .nav-brand {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+  }
+
+  .nav-brand i {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Body class when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
 /* Slides Container - More padding for fixed nav */
 .slides-container {
   margin-top: 0;
   padding: 130px 30px 100px 30px;
+}
+
+@media (max-width: 992px) {
+  .slides-container {
+    padding: 100px 20px 100px 20px;
+  }
 }
 
 .slide {
@@ -170,6 +280,14 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
+@media (max-width: 768px) {
+  .feature-card {
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
 .feature-header {
   display: flex;
   align-items: center;
@@ -191,6 +309,17 @@ body {
   font-weight: 700;
 }
 
+@media (max-width: 768px) {
+  .feature-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .feature-header h2 {
+    font-size: 1.6rem;
+  }
+}
+
 .feature-header .badge {
   background: linear-gradient(135deg, var(--success) 0%, #1e5a3a 100%);
   color: white;
@@ -210,6 +339,7 @@ body {
 @media (max-width: 900px) {
   .two-columns {
     grid-template-columns: 1fr;
+    gap: 25px;
   }
 }
 
@@ -220,6 +350,12 @@ body {
   border-radius: 24px;
 }
 
+@media (max-width: 768px) {
+  .instructions {
+    padding: 20px;
+  }
+}
+
 .instructions h3 {
   color: var(--primary-dark);
   margin-bottom: 20px;
@@ -227,6 +363,12 @@ body {
   align-items: center;
   gap: 12px;
   font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .instructions h3 {
+    font-size: 1.2rem;
+  }
 }
 
 .instructions ol,
@@ -239,6 +381,12 @@ body {
   margin: 12px 0;
   color: var(--text-secondary);
   font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .instructions li {
+    font-size: 0.95rem;
+  }
 }
 
 .tip-box {
@@ -267,6 +415,13 @@ body {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .media-header {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+}
+
 .media-header span {
   font-size: 1rem;
   opacity: 0.9;
@@ -280,6 +435,13 @@ body {
   align-items: center;
   justify-content: center;
   background: #0f0f1a;
+}
+
+@media (max-width: 768px) {
+  .media-content {
+    padding: 15px;
+    min-height: 300px;
+  }
 }
 
 .media-placeholder {
@@ -322,12 +484,25 @@ img, video {
   border-radius: 16px;
 }
 
+@media (max-width: 768px) {
+  img, video {
+    max-height: 300px;
+  }
+}
+
 /* Steps Grid - LARGER */
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
 }
 
 .step-item {
@@ -367,6 +542,14 @@ img, video {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
+  overflow-x: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .comparison-table {
+    font-size: 0.85rem;
+  }
 }
 
 .comparison-table th {
@@ -383,6 +566,14 @@ img, video {
   border: 1px solid var(--border-light);
   vertical-align: top;
   font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
 }
 
 .comparison-table tr:hover td {
@@ -423,6 +614,12 @@ img, video {
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-top: 18px;
+}
+
+@media (max-width: 768px) {
+  .function-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .function-item {
@@ -506,6 +703,7 @@ img, video {
   gap: 20px;
   justify-content: center;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .slide-nav-btn {
@@ -527,6 +725,13 @@ img, video {
   box-shadow: 0 8px 20px rgba(44, 82, 130, 0.4);
 }
 
+@media (max-width: 768px) {
+  .slide-nav-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+}
+
 /* Progress Bar */
 .progress-bar {
   position: fixed;
@@ -546,6 +751,13 @@ code {
   border-radius: 8px;
   font-family: monospace;
   font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  code {
+    font-size: 0.85rem;
+    padding: 3px 8px;
+  }
 }
 
 /* Fixed bottom navigation - LARGER */
@@ -570,6 +782,19 @@ code {
   box-shadow: none;
 }
 
+@media (max-width: 768px) {
+  .fixed-nav-buttons {
+    bottom: 15px;
+    padding: 10px 18px;
+    gap: 10px;
+  }
+  
+  .fixed-nav-buttons .slide-nav-btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+}
+
 /* Title Slide */
 .title-slide {
   text-align: center;
@@ -587,93 +812,13 @@ code {
   font-size: 1.3rem !important;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .presentation-nav {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px;
-  }
-  
-  .nav-brand {
-    font-size: 1.5rem;
-  }
-  
-  .nav-links {
-    justify-content: center;
-  }
-  
-  .nav-btn {
-    padding: 8px 14px;
-    font-size: 0.8rem;
-  }
-  
-  .slides-container {
-    padding: 160px 15px 100px 15px;
-  }
-  
-  .feature-header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .feature-header h2 {
-    font-size: 1.6rem;
-  }
-  
-  .function-list {
-    grid-template-columns: 1fr;
-  }
-  
-  .slide-nav-btn {
-    padding: 12px 28px;
-    font-size: 1rem;
-  }
-  
-  .fixed-nav-buttons {
-    bottom: 15px;
-    padding: 10px 18px;
-  }
-  
-  .fixed-nav-buttons .slide-nav-btn {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-  }
-  
-  .steps-grid {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  }
-  
-  .media-content {
-    min-height: 350px;
-  }
-  
   .title-slide h1 {
     font-size: 2.5rem !important;
   }
-}
-
-@media (max-width: 480px) {
-  .slides-container {
-    padding: 180px 12px 100px 12px;
-  }
   
-  .feature-card {
-    padding: 25px;
-  }
-  
-  .instructions {
-    padding: 20px;
-  }
-  
-  .two-columns {
-    gap: 20px;
-  }
-  
-  .comparison-table th,
-  .comparison-table td {
-    padding: 10px;
-    font-size: 0.85rem;
+  .title-slide p {
+    font-size: 1rem !important;
   }
 }
 
@@ -695,4 +840,41 @@ code {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+  .slides-container {
+    padding: 120px 12px 100px 12px;
+  }
+  
+  .feature-card {
+    padding: 20px;
+  }
+  
+  .instructions {
+    padding: 15px;
+  }
+  
+  .two-columns {
+    gap: 15px;
+  }
+  
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .step-item {
+    padding: 12px;
+  }
+  
+  .step-item strong {
+    font-size: 0.9rem;
+  }
+  
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
 }
